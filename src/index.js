@@ -12,6 +12,11 @@ import App from "./App";
 const client = new ApolloClient({
   cache: new InMemoryCache(),
   link,
+  resolvers: {
+    Query: {
+      localStateMessage: () => 'Hello world!',
+    },
+  },
 });
 
 render(
